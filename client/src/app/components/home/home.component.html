@@ -10,6 +10,97 @@
                 <!-- value={filter.price} -->
                 <input type="range" min="0" max="1000" value="2000" class="slider" />
             </div>
+
+            <div class="category-filter-wrapper">
+                <p>Category:</p>
+    
+                <label class="category-option">All Categories
+                    <!-- (change)=[handleCategoryFilter] -->
+                    <input type="radio" name="radio" value="" />
+                    <span class="checkmark"></span>
+                </label>
+                <!-- {
+                    categories
+                    ? categories.map(category => (
+                        <label key={category._id} class="category-option">{category.name}
+                            <input type="radio" name="radio" value={category.name} onChange={handleCategoryFilter}/>
+                            <span class="checkmark"></span>
+                        </label>
+                    ))
+                    : ''
+                } -->
+            </div>
         </aside>
+        <section className="products-wrapper">
+            <app-title-separator>
+                Products
+            </app-title-separator>
+            <ul>
+                <li *ngFor="let item of products">
+                    <div class="product-item" [attr.data-id]="item._id">
+                        <div class="product-container">
+                            <a routerLink="[/product/, item._id]">
+                                <img class="product-image" [src]="item.image" [alt]="item.title"/>
+                            </a>
+                        </div>
+                        <div class="product-detail">
+                            <a class="product-title" routerLink="['/product/', item._id]">
+                                {{item.title}}
+                            </a>
+                            <div class="product-price">{{item.price}}</div>
+                            <button class="add-to-cart-btn" >Add To Cart</button>
+                             <!-- <button class="add-to-cart-btn" onClick={handleAddToCart}>Add To Cart</button> -->
+                        </div>
+                    </div>
+                </li>
+                <!-- {products.length === 0
+                    ?   (
+                            <>
+                                <Spinner animation="border" variant="warning" />
+                            </>
+                        )
+                    : searchProducts
+                        ? products.filter(x => 
+                            x.title.toLowerCase().includes(searchProducts.toLowerCase())         ||
+                            x._id.toLowerCase().includes(searchProducts.toLowerCase())           ||
+                            x.category.name.toLowerCase().includes(searchProducts.toLowerCase()) ||
+                            x.brand.name.toLowerCase().includes(searchProducts.toLowerCase())
+                            )
+                            .filter(x => 
+                                x.price > 0 && x.price <= filter.price 
+                            )
+                            .filter(x => 
+                                x.category.name.includes(filter.category) 
+                            )
+                            .filter(x => 
+                                x.brand.name.includes(filter.brand) 
+                            )
+                            .map((product) =>
+                                <li key={product._id}>
+                                    <ProductItem
+                                        productData={product} />
+                                </li>
+                            )
+                        : products
+                            .filter(x => 
+                                x.price > 0 && x.price <= filter.price 
+                            )
+                            .filter(x => 
+                                x.category.name.includes(filter.category) 
+                            )
+                            .filter(x => 
+                                x.brand.name.includes(filter.brand) 
+                            )
+                            .map((product) =>
+                                (
+                                    <li key={product._id}>
+                                        <ProductItem
+                                            productData={product} />
+                                    </li>
+                                )
+                            )
+                } -->
+            </ul>
+        </section>
     </main>
 </app-main-layout>

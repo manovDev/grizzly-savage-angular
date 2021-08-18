@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+    production: false,
+    baseUrl: 'http://localhost:5000',
+    product: {
+        getAll: 'get-all',
+        create: 'create',
+        edit: 'edit',
+        delete: 'delete',
+        getOne: (id: string) => `${id}`,
+    }
 };
 
 /*
