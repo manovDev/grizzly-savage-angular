@@ -12,6 +12,7 @@ import { ProfilenavComponent } from './components/shared/profilenav/profilenav.c
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { TitleSeparatorComponent } from './components/shared/title-separator/title-separator.component';
+import { ContactusComponent } from './components/contactus/contactus.component';
 
 @NgModule({
     declarations: [
@@ -24,11 +25,12 @@ import { TitleSeparatorComponent } from './components/shared/title-separator/tit
         ProfilenavComponent,
         FooterComponent,
         HomeComponent,
+        ContactusComponent,
         TitleSeparatorComponent,
     ],
     imports: [
-        HttpClientModule,
         BrowserModule,
+        HttpClientModule,
         AppRoutingModule
     ],
     providers: [],
