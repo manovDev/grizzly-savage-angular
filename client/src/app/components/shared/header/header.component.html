@@ -1,1 +1,53 @@
-<p>header works!</p>
+<div class="nav-wrapper">
+    <nav>
+        <app-search-products-input></app-search-products-input>
+
+        <ul class="nav-links">
+            <li>
+                <a routerLink="/">
+                    SHOP
+                </a>
+            </li>
+            <li>
+                <a routerLink="/about-us">
+                    ABOUT US
+                </a>
+            </li>
+            <li>
+                <a routerLink="/">
+                    <div class="header-logo">
+                        <img src="../../../../assets/grizzly-savage-logo.png" alt="Grizzly Savage Logo" />
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/faq">
+                    FAQ
+                </a>
+            </li>
+            <li>
+                <a routerLink="/contact-us">
+                    CONTACT US
+                </a>
+            </li>
+        </ul>
+
+        <div class="user-greetings">
+            <!-- {user
+                    ? (
+                        <>
+                            <span>Hello, {user.firstName}</span>
+                        </>
+                    )
+                    : ''
+                } -->
+        </div>
+        <div class="nav-additions">
+            <app-profilenav></app-profilenav>
+            <!-- <ProfileNav user={user} /> -->
+
+            <app-cartlink></app-cartlink>
+            <!-- <CartLink /> -->
+        </div>
+    </nav>
+</div>
