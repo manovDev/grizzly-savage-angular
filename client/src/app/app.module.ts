@@ -10,6 +10,7 @@ import { SearchProductsInputComponent } from './components/shared/search-product
 import { CartlinkComponent } from './components/shared/cartlink/cartlink.component';
 import { ProfilenavComponent } from './components/shared/profilenav/profilenav.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
     CartlinkComponent,
     ProfilenavComponent,
     FooterComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
