@@ -11,6 +11,7 @@ import { CartlinkComponent } from './components/shared/cartlink/cartlink.compone
 import { ProfilenavComponent } from './components/shared/profilenav/profilenav.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
+import { ContactusComponent } from './components/contactus/contactus.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HomeComponent } from './components/home/home.component';
     ProfilenavComponent,
     FooterComponent,
     HomeComponent,
+    ContactusComponent,
   ],
   imports: [
     BrowserModule,
