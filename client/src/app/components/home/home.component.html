@@ -1,1 +1,15 @@
-<p>home works!</p>
+<app-main-layout>
+    <main class="main-wrapper">
+        <aside class="filter-box">
+            <div class="slider-wrapper">
+                <p>Price Range:</p>
+                <!-- <p class="price-range"><span>$0.00</span> - <span>${filter.price}.00</span></p> -->
+                <p class="price-range"><span>$0.00</span> - <span>$0.00</span></p>
+
+                <!-- (change)=[handlePriceFilter] -->
+                <!-- value={filter.price} -->
+                <input type="range" min="0" max="1000" value="2000" class="slider" />
+            </div>
+        </aside>
+    </main>
+</app-main-layout>
