@@ -4,5 +4,6 @@ const order = require('./orderController');
 
 module.exports = {
     user,
+    product,
     order,
 };
