@@ -15,6 +15,9 @@ import { TitleSeparatorComponent } from './components/shared/title-separator/tit
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { environment } from '../environments/environment';
 
 @NgModule({
     declarations: [
@@ -35,6 +38,8 @@ import { SignupComponent } from './components/signup/signup.component';
     imports: [
         BrowserModule,
         HttpClientModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireAuthModule,
         AppRoutingModule
     ],
     providers: [],
