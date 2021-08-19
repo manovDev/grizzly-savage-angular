@@ -13,6 +13,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { TitleSeparatorComponent } from './components/shared/title-separator/title-separator.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
+import { SigninComponent } from './components/signin/signin.component';
 
 @NgModule({
     declarations: [
@@ -27,6 +28,7 @@ import { ContactusComponent } from './components/contactus/contactus.component';
         HomeComponent,
         ContactusComponent,
         TitleSeparatorComponent,
+        SigninComponent,
     ],
     imports: [
         BrowserModule,
