@@ -17,7 +17,6 @@ export class SigninComponent implements OnInit {
     ngOnInit(): void {
     }
 
-
     signin(event: Event, email: string, password: string) {
         event.preventDefault();
         this.afAuth.signInWithEmailAndPassword(email, password)
