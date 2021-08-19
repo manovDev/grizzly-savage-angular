@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "grizzly-savage": {
+      "hosting": {
+        "grizzly-savage-angular": [
+          "grizzly-savage"
+        ]
+      }
+    }
+  }
+}
