@@ -18,6 +18,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { environment } from '../environments/environment';
+import { FaqComponent } from './components/faq/faq.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
     declarations: [
@@ -34,13 +36,15 @@ import { environment } from '../environments/environment';
         TitleSeparatorComponent,
         SigninComponent,
         SignupComponent,
+        FaqComponent,
     ],
     imports: [
         BrowserModule,
         HttpClientModule,
         AngularFireModule.initializeApp(environment.firebaseConfig),
         AngularFireAuthModule,
-        AppRoutingModule
+        AppRoutingModule,
+        NgbModule
     ],
     providers: [],
     bootstrap: [AppComponent]

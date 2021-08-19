@@ -5,6 +5,7 @@ import { ContactusComponent } from './components/contactus';
 import { HomeComponent } from './components/home';
 import { SignupComponent } from './components/signup';
 import { SigninComponent } from './components/signin';
+import { FaqComponent } from './components/faq';
 
 const routes: Routes = [
     {
@@ -27,6 +28,10 @@ const routes: Routes = [
         path: 'sign-up',
         component: SignupComponent
     },
+    {
+        path: 'faq',
+        component: FaqComponent
+    }
 ];
 
 @NgModule({
