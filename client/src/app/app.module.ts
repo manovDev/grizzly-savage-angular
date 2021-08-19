@@ -14,6 +14,7 @@ import { HomeComponent } from './components/home/home.component';
 import { TitleSeparatorComponent } from './components/shared/title-separator/title-separator.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { SigninComponent } from './components/signin/signin.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
     declarations: [
@@ -29,6 +30,7 @@ import { SigninComponent } from './components/signin/signin.component';
         ContactusComponent,
         TitleSeparatorComponent,
         SigninComponent,
+        SignupComponent,
     ],
     imports: [
         BrowserModule,
