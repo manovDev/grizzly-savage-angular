@@ -3,34 +3,34 @@
         <div class="sign-up-content">
             <h1>Register</h1>
             <!-- <form onSubmit={signUpErr ? '' : submitForm}> -->
-            <form>
+            <form (submit)="signup($event,firstName.value, lastName.value, email.value, password.value)">
                 <!-- <label for="firstName" data-err={!errState.firstNameErr ? '' : errState.firstNameErr}>-->
                 <label for="firstName" >
                     First Name
                 </label>
 
                 <!-- <input id="firstName" name="firstName" type="text" onChange={handleChange} onBlur={handleValidation} placeholder="John" /> -->
-                <input id="firstName" name="firstName" type="text" placeholder="John" />
+                <input id="firstName" name="firstName" type="text" placeholder="John" #firstName/>
 
                 <!-- <label for="lastName" data-err={!errState.lastNameErr ? '' : errState.lastNameErr}>Last Name</label> -->
                 <label for="lastName">Last Name</label>
 
                 <!-- <input id="lastName" name="lastName" type="text" onChange={handleChange} onBlur={handleValidation} placeholder="Wilson" /> -->
-                <input id="lastName" name="lastName" type="text" 
-                    placeholder="Wilson" />
+                <input id="lastName" name="lastName" type="text"  placeholder="Wilson" #lastName />
                 <!-- <label for="email" data-err={!errState.emailErr ? '' : errState.emailErr}>Email</label> -->
                 <label for="email" >Email</label>
                 <input id="email" name="email" type="email" onChange={handleChange} onBlur={handleValidation}
-                    placeholder="john@domain.com" />
+                    placeholder="john@domain.com" #email />
                 <!-- <label for="password" data-err={!errState.passwordErr ? '' : errState.passwordErr}>Password</label> -->
                 <label for="password" >Password</label>
                 <!-- <input id="password" name="password" onChange={handleChange} onBlur={handleValidation} -->
-                <input id="password" name="password" type="password" />
+                <input id="password" name="password" type="password" #password />
                 <!-- <label for="profileImage" data-err={!errState.profileImageErr ? '' :
                     errState.profileImageErr} -->
-                <label for="profileImage" >Profile Image</label>
+
+                <!-- <label for="profileImage" >Profile Image</label> -->
                 <!-- <input id="profileImage" type="file" name="profileImage" onBlur={handleValidation} -->
-                <input id="profileImage" type="file" name="profileImage"  />
+                <!-- <input id="profileImage" type="file" name="profileImage"  /> -->
 
                 <button>Register</button>
                 <!-- {signUpErr
