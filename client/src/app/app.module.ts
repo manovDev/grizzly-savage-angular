@@ -46,6 +46,22 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         AppRoutingModule,
         NgbModule
     ],
+    exports: [
+        AppComponent,
+        AboutusComponent,
+        MainLayoutComponent,
+        HeaderComponent,
+        SearchProductsInputComponent,
+        CartlinkComponent,
+        ProfilenavComponent,
+        FooterComponent,
+        HomeComponent,
+        ContactusComponent,
+        TitleSeparatorComponent,
+        SigninComponent,
+        SignupComponent,
+        FaqComponent,
+    ],
     providers: [],
     bootstrap: [AppComponent]
 })
