@@ -8,7 +8,7 @@ export const environment = {
         messagingSenderId: "1071159612884",
         appId: "1:1071159612884:web:1faa81a339a69815f27241"
     },
-    baseUrl: 'http://localhost:5000',
+    baseUrl: 'https://grizzly-savage.herokuapp.com',
     product: {
         getAll: 'get-all',
         create: 'create',
