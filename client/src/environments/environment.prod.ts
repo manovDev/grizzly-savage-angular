@@ -8,12 +8,12 @@ export const environment = {
         messagingSenderId: "1071159612884",
         appId: "1:1071159612884:web:1faa81a339a69815f27241"
     },
-    baseUrl: 'http://localhost:5000/',
-    products: {
-        getAll: 'products/get-all',
-        create: 'products/create',
-        edit: 'products/edit',
-        delete: 'products/delete',
-        getOne: (id: string) => `products/${id}`,
+    baseUrl: 'http://localhost:5000',
+    product: {
+        getAll: 'get-all',
+        create: 'create',
+        edit: 'edit',
+        delete: 'delete',
+        getOne: (id: string) => `${id}`,
     }
 };
