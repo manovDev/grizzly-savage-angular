@@ -6,6 +6,7 @@ import { HomeComponent } from './components/home';
 import { SignupComponent } from './components/signup';
 import { SigninComponent } from './components/signin';
 import { FaqComponent } from './components/faq';
+import { AuthGuard } from './guard/guard.guard';
 
 const routes: Routes = [
     {
@@ -18,15 +19,22 @@ const routes: Routes = [
     },
     {
         path: '',
-        component: HomeComponent
+        redirectTo: '/home', 
+        pathMatch: 'full' 
+    },
+    {
+        path: 'home',
+        component: HomeComponent,
     },
     {
         path: 'sign-in',
-        component: SigninComponent
+        component: SigninComponent,
+        canActivate: [AuthGuard],
     },
     {
         path: 'sign-up',
-        component: SignupComponent
+        component: SignupComponent,
+        canActivate: [AuthGuard],
     },
     {
         path: 'faq',

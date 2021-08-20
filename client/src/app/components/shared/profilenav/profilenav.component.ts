@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SigninService } from '../../../services/signin/signin.service';
+import { Router } from '@angular/router';
 @Component({
     selector: 'app-profilenav',
     templateUrl: './profilenav.component.html',
@@ -8,14 +9,17 @@ import { SigninService } from '../../../services/signin/signin.service';
 export class ProfilenavComponent implements OnInit {
     isUserLoggedIn: boolean = false;
 
-    constructor(private service: SigninService) { }
+    constructor(
+        private service: SigninService,
+        private router: Router
+        ) { }
 
     ngOnInit(): void {
         this.isLoggedIn();
     }
 
     signOut() {
-        this.service.signout();
+        this.service.signout().then(() => this.router.navigate(['/sign-in']));
     }
 
     isLoggedIn () {

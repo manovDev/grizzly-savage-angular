@@ -4,6 +4,10 @@
     display: flex;
     align-items: center;
 
+    a {
+        cursor: pointer;
+    }
+
     .profile-icon-wrapper {
         font-size: 24px;
         cursor: pointer;
