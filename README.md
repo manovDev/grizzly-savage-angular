@@ -12,7 +12,7 @@
 
 ## Description
 
-Grizzly Savage is eCommerce website / brand where you can find the best hiking/camping equipment. (SoftUni React project)
+Grizzly Savage is eCommerce website / brand where you can find the best hiking/camping equipment. (SoftUni Angular project)
 The users can can search products by name, product id and filter by category and brand.
 If the user is logged in, he can place orders and view them and their details.
 There is also profile page where he can edit some of his account information.
@@ -21,6 +21,7 @@ When the user add a product to the cart he can access it from the cart icon in t
 
 The admin users have access to the dashboard where they can create, edit and delete products, orders, categories, brands and more...
 
+* Some of the functionalities are still under development
 * The admin functionality is still under development
 
 ## Project Architecture - Basic Overview (important directories)
@@ -79,7 +80,7 @@ Steps and commands for running the app:
     [Server]
       In the second terminal type `cd server`
       Run `npm install` to install server side dependencies
-      After the installation is finished type `nodemon './src/server.js'`
+      After the installation is finished type `nodemon './src/server.js' or 'npm run dev' or 'npm start'`
   ```
 
 ## Authors
