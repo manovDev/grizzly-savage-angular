@@ -1,7 +1,7 @@
 
 # Grizzly-Savage-Softuni Angular
 
-### Deployed app version - [here](https://grizzly-savage.web.app/)
+### Deployed app version - [here](https://grizzly-savage.web.app/home)
 
 ## Table of Contents
 - Description
