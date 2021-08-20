@@ -17,6 +17,11 @@ export class SigninService {
         return this.http.post(this.signInUrl, body, { headers });
     }
 
+    signout() {
+        this.afAuth.signOut()
+        .then(() => localStorage.removeItem('user'));
+    }
+
     async isLoggedIn(): Promise<boolean> {
         try {
             await new Promise((resolve, reject) =>
