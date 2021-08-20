@@ -25,8 +25,6 @@ export class ProfilenavComponent implements OnInit {
     isLoggedIn () {
         this.service.isLoggedIn()
         .then((isLoggedIn: boolean) => {
-            console.log(isLoggedIn);
-            
             this.isUserLoggedIn = isLoggedIn;
         });
     }
