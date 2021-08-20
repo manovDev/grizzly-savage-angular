@@ -1,5 +1,5 @@
 
-# Grizzly-Savage-Softuni React
+# Grizzly-Savage-Softuni Angular
 
 ### Deployed app version - [here](https://grizzly-savage.web.app/)
 
