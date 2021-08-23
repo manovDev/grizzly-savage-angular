@@ -20,6 +20,7 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { environment } from '../environments/environment';
 import { FaqComponent } from './components/faq/faq.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 @NgModule({
     declarations: [
@@ -37,6 +38,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         SigninComponent,
         SignupComponent,
         FaqComponent,
+        ProductDetailsComponent,
     ],
     imports: [
         BrowserModule,
