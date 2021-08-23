@@ -48,7 +48,7 @@
                                 {{item.title}}
                             </a>
                             <div class="product-price">{{item.price}}</div>
-                            <button class="add-to-cart-btn" >Add To Cart</button>
+                            <button class="add-to-cart-btn" (click)="handleAddToCart(item)">Add To Cart</button>
                              <!-- <button class="add-to-cart-btn" onClick={handleAddToCart}>Add To Cart</button> -->
                         </div>
                     </div>
