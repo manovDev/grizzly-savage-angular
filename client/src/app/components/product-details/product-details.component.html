@@ -1,1 +1,54 @@
 
+<app-main-layout>
+
+    <section class="product-details-wrapper">
+        <div class="product-image">
+            <img [src]="product?.image" [alt]="product?.title" />
+        </div>
+
+        <div class="product-information">
+            <h1 class="product-title">{{product?.title}}</h1>
+
+            <span class="product-id">Product id # {{product?._id}}</span>
+
+            <h2 class="product-price">${{product?.price?.toFixed(2)}}</h2>
+
+            <div class="add-to-cart-options">
+                <!-- <ProductDetailsCounter [maxQtty]={product?.qtty} productCounter={productCounter} setProductCounter={setProductCounter} /> -->
+
+                <button  class="add-to-cart-btn">Add To Cart</button>
+                <!-- <button (click)="handleAddToCart" class="add-to-cart-btn">Add To Cart</button> -->
+            </div>
+
+            <div class="product-stock">
+                In stock: <span class="product-qtty">{{product?.qtty}}</span>
+            </div>
+
+            <div class="product-details">
+                <span class="product-details-item">
+                    Category:
+                    <span class="product-details-data">
+                        {{product?.category.name}}
+                    </span>
+                </span>
+                <span class="product-details-item">
+                    Brand:
+                    <span class="product-details-data">
+                        {{product?.brand.name}}
+                    </span>
+                </span>
+                <span class="product-details-item">
+                    Model:
+                    <span class="product-details-data">
+                        {{product?.model}}
+                    </span>
+                </span>
+            </div>
+            <div class="product-description">
+                <h2>Description:</h2>
+                <p>{{product?.description}}</p>
+            </div>
+        </div>
+    </section>
+
+</app-main-layout>
