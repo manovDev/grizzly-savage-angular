@@ -45,7 +45,7 @@ export class ProductDetailsComponent implements OnInit {
     }
 
     handleAddToCart(product: any) {
-        this.cart.add(product);
+        // this.cart.add(product);
     }
 
 }

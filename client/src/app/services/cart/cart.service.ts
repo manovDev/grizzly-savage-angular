@@ -1,39 +1,40 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { addProduct, editProduct, removeProduct } from '../../actions/cart.actions';
 
 @Injectable({
     providedIn: 'root'
 })
 export class CartService {
-    cart: string = 'cart';
+    cart$: Observable<object>;
 
-    constructor() { }
-
-    getAll() {
-        const cartJson: string = localStorage.getItem(this.cart) || '';
-        return cartJson ? JSON.parse(cartJson) : {};
+    constructor(private store: Store<{ cart: object }>) {
+        this.cart$ = this.store.select(state => state.cart);
     }
 
-    getOne(id: string) {
-        const cartJson: string = localStorage.getItem(this.cart) || '';
-        const cartObj: any = cartJson ? JSON.parse(cartJson) : {};
-        const productId = Object.keys(cartObj).filter(key => key === id)[0];
-        return cartObj[productId];
+    ngOnInit() {
+
     }
 
-    add(product: { _id: '' }) {
-        const allProducts: any = this.getAll() || {};
-        const data = { ...allProducts, [product?._id]: product };
-        localStorage.setItem(this.cart, JSON.stringify(data));
+    private getStorage() {
+        const cart = localStorage.getItem('cart');
+        return cart ? JSON.parse(cart) : [];
     }
 
-    update(product: any) {
-        const allProducts: any = this.getAll();
-        return { ...allProducts, [product?._id]: product };
+    addProduct(product: any) {
+        this.store.dispatch(addProduct({ product }));
+        localStorage.setItem('cart', JSON.stringify([...this.getStorage(), product]));
     }
 
-    removeOne(id: string) {
-        let data = this.getAll();
-        delete data[id];
-        localStorage.setItem(this.cart, JSON.stringify(data));
+    editProduct(product: any) {
+        this.store.dispatch(editProduct({product}));
+        localStorage
+            .setItem('cart', JSON.stringify(this.getStorage().map((x: any) => x._id === product._id ? { ...x, ...product } : x)));
+    }
+
+    removeProduct(_id: string) {
+        this.store.dispatch(removeProduct({ _id }));
+        localStorage.setItem('cart', JSON.stringify(this.getStorage().filter((x: any) => x._id !== _id)));
     }
 }

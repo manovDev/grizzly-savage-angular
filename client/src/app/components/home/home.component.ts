@@ -17,12 +17,11 @@ export class HomeComponent implements OnInit {
     ngOnInit(): void {
         this.service.getProducts().subscribe((data: any) => {
             this.products = data;
-            console.log(this.products);
         });
     }
 
     handleAddToCart(product: any) {
-        this.cart.add(product);
+        this.cart.addProduct(product);
     }
 
 }

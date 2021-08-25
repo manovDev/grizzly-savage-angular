@@ -10,9 +10,9 @@ export class AuthGuard implements CanActivate {
         state: RouterStateSnapshot,
         
     ): boolean {
-        let isLoggedIn: any = localStorage.getItem('user');
-        isLoggedIn = JSON.parse(isLoggedIn);
-
+        let isLoggedIn: any = localStorage.getItem('user') || '';
+        isLoggedIn =isLoggedIn ? JSON.parse(isLoggedIn) : false;
+        
         if(!isLoggedIn) {
             return true;
         }

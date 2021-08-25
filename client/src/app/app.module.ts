@@ -21,7 +21,9 @@ import { environment } from '../environments/environment';
 import { FaqComponent } from './components/faq/faq.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
-
+import { CartComponent } from './components/cart/cart.component';
+import { StoreModule } from '@ngrx/store';
+import { cart } from './reducers/cart.reducer';
 @NgModule({
     declarations: [
         AppComponent,
@@ -39,6 +41,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
         SignupComponent,
         FaqComponent,
         ProductDetailsComponent,
+        CartComponent,
     ],
     imports: [
         BrowserModule,
@@ -46,7 +49,8 @@ import { ProductDetailsComponent } from './components/product-details/product-de
         AngularFireModule.initializeApp(environment.firebaseConfig),
         AngularFireAuthModule,
         AppRoutingModule,
-        NgbModule
+        NgbModule,
+        StoreModule.forRoot({cart}, {})
     ],
     exports: [
         AppComponent,

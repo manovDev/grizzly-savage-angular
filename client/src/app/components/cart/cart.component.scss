@@ -1,0 +1,199 @@
+.cart-page {
+    width: 100%;
+    max-width: 1440px;
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.cart-products-wrapper {
+    width: 50%;
+
+    .cart-title {
+        font-weight: 400;
+        color: #04335e;
+        
+        span {
+            font-weight: 500;
+        }
+    }
+
+    ul {
+        list-style: none;
+
+        li {
+            padding: 20px 0;
+            border-top: 1px solid lightgray;
+
+            .selected-product {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .product-image {
+                    width: 100px;
+                    border-radius: 5px;
+                }
+
+                .product-title {
+                    max-width: 160px;
+                    width: 100%;
+                    color: gray;
+                }
+
+                .product-price {
+                    color: orange;
+                    font-weight: 500;
+                    font-size: 18px;
+                }
+
+                .product-remove-btn {
+                    button {
+                        width: 25px;
+                        height: 25px;
+                        border: none;
+                        outline: none;
+                        background-color: white;
+
+                        svg {
+                            fill: #D4333B;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.order-summary {
+    display: flex;
+    flex-flow: wrap column;
+    justify-content: space-around;
+    align-items: center;
+    width: 250px;
+    height: 280px;
+    margin-top: 46px;
+    box-shadow: 0px 0px 5px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    padding: 20px 20px 50px 20px;
+
+    .order-summary-title {
+        font-size: 24px;
+        color: #04335e;
+    }
+
+    .order-summary-info {
+        width: 100%;
+        display: flex;
+        flex-flow: wrap column;
+        border-top: 1px solid lightgray;
+        border-bottom: 1px solid lightgray;
+
+        .order-summary-info-item {
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+            margin: 10px 0;
+
+            .subtotal-title,
+            .est-subtotal-title {
+                font-size: 14px;
+                color: #251607;
+                font-weight: 500;
+            }
+
+            .subtotal-info,
+            .est-subtotal-info {
+                font-size: 14px;
+                font-weight: 900;
+                color: #04335e;
+
+            }
+        }
+    }
+
+    .order-summary-buttons {
+        width: 100%;
+        position: relative;
+        
+        .dis-btn {
+            background-color: #E8E8E8 !important;
+            color: #a0a4a8 !important;
+        }
+
+        .check-out-btn,
+        .must-login-btn {
+            border: none;
+            outline: none;
+            background-color: orange;
+            width: 100%;
+            height: 40px;
+            color: white;
+            font-weight: 500;
+            border-radius: 5px;
+            transition: all 0.2s ease-in-out;
+            opacity: 1;
+    
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+
+        .must-login-msg {
+            position: absolute;
+            width: 100%;
+            top: 50px;
+            right: 0;
+            color: #D4333B;
+            font-size: 14px;
+        }
+    }
+    
+}
+
+.product-qtty {
+
+    .reduceCounter,
+    .incCounter {
+        border: none;
+        outline: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 5px;
+        color: white;
+        transition: all 0.2s ease-in-out;
+        opacity: 1;
+        
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+
+    .reduceCounter {
+        background-color: #D4333B;
+    }
+    
+    .incCounter {
+        background-color: #0478FA;
+    }
+
+    input {
+        width: 50px;
+        text-align: center;
+        border: none;
+        outline: none;
+        background-color: white;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+}
+
