@@ -26,6 +26,7 @@ import { StoreModule } from '@ngrx/store';
 import { cart } from './reducers/cart.reducer';
 import { OrderShippingComponent } from './components/order-shipping/order-shipping.component';
 import { OrderPaymentComponent } from './components/order-payment/order-payment.component';
+import { OrderConfirmComponent } from './components/order-confirm/order-confirm.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -46,6 +47,7 @@ import { OrderPaymentComponent } from './components/order-payment/order-payment.
         CartComponent,
         OrderShippingComponent,
         OrderPaymentComponent,
+        OrderConfirmComponent,
     ],
     imports: [
         BrowserModule,

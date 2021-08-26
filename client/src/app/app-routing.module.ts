@@ -11,6 +11,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { AuthGuard } from './guard/guard.guard';
 import { OrderShippingComponent } from './components/order-shipping/order-shipping.component';
 import { OrderPaymentComponent } from './components/order-payment/order-payment.component';
+import {OrderConfirmComponent  } from './components/order-confirm/order-confirm.component';
 
 const routes: Routes = [
     {
@@ -37,6 +38,10 @@ const routes: Routes = [
     {
         path: 'cart',
         component: CartComponent
+    },
+    {
+        path: 'order/confirm',
+        component: OrderConfirmComponent
     },
     {
         path: 'order/shipping',
