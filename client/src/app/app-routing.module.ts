@@ -10,6 +10,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { CartComponent } from './components/cart/cart.component';
 import { AuthGuard } from './guard/guard.guard';
 import { OrderShippingComponent } from './components/order-shipping/order-shipping.component';
+import { OrderPaymentComponent } from './components/order-payment/order-payment.component';
 
 const routes: Routes = [
     {
@@ -40,6 +41,10 @@ const routes: Routes = [
     {
         path: 'order/shipping',
         component: OrderShippingComponent
+    },
+    {
+        path: 'order/payment',
+        component: OrderPaymentComponent
     },
     {
         path: 'sign-in',
