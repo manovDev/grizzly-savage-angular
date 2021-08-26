@@ -1,1 +1,84 @@
-<p>order-confirm works!</p>
+<app-main-layout>
+    <section class="order-confirm-wrapper">
+        <!-- <OrderSteps steps={["shipping", "confirm" ]} /> -->
+
+        <div class="order-confirm-content">
+            <!-- <OrderConfirmInfo procOrder={procOrder} /> -->
+            <div class="order-confirm-info-wrapper">
+                <div class="shipping-data">
+                    <h2 class="shipping-title">
+                        Shipping Info
+                    </h2>
+                    <p>
+                        <span>Name: </span> <!-- {`${user.firstName} ${user.lastName}`} -->
+                    </p>
+                    <p>
+                        <span>Phone: </span> <!-- {procOrder.phoneNumber} -->
+                    </p>
+                    <p>
+                        <span>Address: </span><!--  {`${procOrder.address}, ${procOrder.city}, ${procOrder.postalCode}, ${procOrder.country}`} -->
+                    </p>
+                </div>
+                <h2 class="cart-items-title">Your Cart Items:</h2>
+                <ul>
+                <!--     {
+                        procOrder.products && procOrder.products
+                            .map((product) =>
+                                (
+                                    <li key={product._id}>
+                                        <div class="selected-product">
+                                            <img class="product-image" src={product.image} alt={product.title}/>
+                                            
+                                            <Link class="product-title" to={"/product/" + product._id}>
+                                                {product.title}
+                                            </Link>
+    
+                                            <div class="product-price">
+                                                {`${product.units} x $${product.price.toFixed(2)} = $${(product.units * product.price).toFixed(2)}`}
+                                            </div>
+                                        </div>
+                                    </li>
+                                )
+                            )
+                    } -->
+                </ul>
+            </div>
+
+            <div class="order-confirm-summary-wrapper">
+                <h3 class="order-summary-title">Order Summary</h3>
+    
+                <div class="order-summary-info">
+                    <div class="order-summary-info-item">
+                        <span class="info-item-title">Subtotal:</span>
+                        <span class="info-item-info">$<!-- {procOrder.totalPrice.toFixed(2)} --></span>
+                    </div>
+    
+                    <div class="order-summary-info-item">
+                        <span class="info-item-title">Shipping:</span>
+                        <span class="info-item-info">$0</span>
+                    </div>
+    
+                    <div class="order-summary-info-item">
+                        <span class="info-item-title">Tax:</span>
+                        <span class="info-item-info"><!-- {`$${(procOrder.totalPrice * 0.05).toFixed(2)}`} --></span>
+                    </div>
+                </div>
+    
+                <div class="order-summary-info">
+                    <div class="order-summary-info-item">
+                        <span class="info-item-title">Total:</span>
+                        <span class="info-item-info"><!-- {`$${(cart.totalPrice + (procOrder.totalPrice * 0.05)).toFixed(2)}`} --></span>
+                    </div>
+                </div>
+    
+                <div class="order-summary-buttons">
+                    <button
+                        class="check-out-btn"
+                        click="handleProceedToPayment()">Proceed to Payment</button>
+                </div>
+            </div>
+
+            <!-- <OrderConfirmSummary procOrder={procOrder} setProcOrder={setProcOrder} /> -->
+        </div>
+    </section>
+</app-main-layout>
