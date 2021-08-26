@@ -24,6 +24,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { CartComponent } from './components/cart/cart.component';
 import { StoreModule } from '@ngrx/store';
 import { cart } from './reducers/cart.reducer';
+import { OrderShippingComponent } from './components/order-shipping/order-shipping.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -42,6 +43,7 @@ import { cart } from './reducers/cart.reducer';
         FaqComponent,
         ProductDetailsComponent,
         CartComponent,
+        OrderShippingComponent,
     ],
     imports: [
         BrowserModule,

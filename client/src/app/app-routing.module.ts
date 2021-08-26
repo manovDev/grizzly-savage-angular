@@ -9,6 +9,7 @@ import { FaqComponent } from './components/faq';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { CartComponent } from './components/cart/cart.component';
 import { AuthGuard } from './guard/guard.guard';
+import { OrderShippingComponent } from './components/order-shipping/order-shipping.component';
 
 const routes: Routes = [
     {
@@ -21,8 +22,8 @@ const routes: Routes = [
     },
     {
         path: '',
-        redirectTo: '/home', 
-        pathMatch: 'full' 
+        redirectTo: '/home',
+        pathMatch: 'full'
     },
     {
         path: 'home',
@@ -35,6 +36,10 @@ const routes: Routes = [
     {
         path: 'cart',
         component: CartComponent
+    },
+    {
+        path: 'order/shipping',
+        component: OrderShippingComponent
     },
     {
         path: 'sign-in',
