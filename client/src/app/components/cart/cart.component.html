@@ -19,10 +19,11 @@
 
 
                         <div class="product-counter">
-                            <button class="reduceCounter" id="reduceCounter" (click)="decreaseCount(product?._id)">-</button>
+                            <button class="reduceCounter" id="reduceCounter"
+                                (click)="decreaseCount(product?._id)">-</button>
 
-                            <input type="number" min="1" [max]="product?.qtty" [value]="product?.count ? product.count : 1"
-                                readOnly />
+                            <input type="number" min="1" [max]="product?.qtty"
+                                [value]="product?.count ? product.count : 1" readOnly />
 
                             <button class="incCounter" id="incCounter" [attr.data-max]="product?.qtty"
                                 (click)="increaseCount(product?._id)">+</button>
@@ -36,7 +37,12 @@
                         <div class="product-remove-btn">
                             <!-- (click)={handleRemoveProduct} -->
                             <button [id]="product?._id" (click)="removeProduct(product?._id)">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v10zM18 4h-2.5l-.71-.71c-.18-.18-.44-.29-.7-.29H9.91c-.26 0-.52.11-.7.29L8.5 4H6c-.55 0-1 .45-1 1s.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1z"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
+                                    fill="#000000">
+                                    <path d="M0 0h24v24H0V0z" fill="none" />
+                                    <path
+                                        d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v10zM18 4h-2.5l-.71-.71c-.18-.18-.44-.29-.7-.29H9.91c-.26 0-.52.11-.7.29L8.5 4H6c-.55 0-1 .45-1 1s.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1z" />
+                                </svg>
                             </button>
                         </div>
                     </div>
@@ -57,25 +63,14 @@
                     <span class="est-subtotal-info">${{totalPrice?.toFixed(2)}}</span>
                 </div>
             </div>
-            <div class="order-summary-buttons">
-                <!-- {
-                user 
-                    ?
-                        cart.products.length === 0
-                        ?
-                            <button class="check-out-btn dis-btn" disabled>Check Out</button>
-                        :
-                            <button
-                                class="check-out-btn"
-                                onClick={handleCheckOut}>Check Out</button>
-                    : 
-                    <>
-                        <button
-                            class="must-login-btn"
-                            onClick={redirectToLogin}>Login</button>
-                        <span class="must-login-msg">You must login to place your order!</span>
-                    </>
-            } -->
+            <div class="order-summary-buttons" *ngIf="loggedIn">
+                <button *ngIf="!products.length" class="check-out-btn dis-btn" disabled>Check Out</button>
+                <button *ngIf="products.length" class="check-out-btn" (click)="checkout()" >Check Out</button>
+                    
+            </div>
+            <div class="order-summary-buttons" *ngIf="!loggedIn">
+                <button class="must-login-btn" (click)="redirectToLogin()">Login</button>
+                <span class="must-login-msg">You must login to place your order!</span>
             </div>
         </div>
     </section>
