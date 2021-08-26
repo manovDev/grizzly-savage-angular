@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { addProduct, editProduct, removeProduct } from '../../actions/cart.actions';
+import { addProduct, decreaseCount, editProduct, increaseCount, removeProduct } from '../../actions/cart.actions';
 
 @Injectable({
     providedIn: 'root'
@@ -23,12 +23,36 @@ export class CartService {
     }
 
     addProduct(product: any) {
-        this.store.dispatch(addProduct({ product }));
-        localStorage.setItem('cart', JSON.stringify([...this.getStorage(), product]));
+        let products = this.getStorage();
+        const productIndex = products.findIndex((x: any) => x?._id && product?._id && x?._id === product?._id);
+
+        if (productIndex !== -1) {
+            this.increaseCount(product);
+            return;
+        }
+        this.store.dispatch(addProduct({ product: { ...product, count: product.count || 1 } }));
+        localStorage.setItem('cart', JSON.stringify([...products, product]));
+    }
+
+    increaseCount(product: any) {
+        const calc = (newCount = 0) => product.qtty >= newCount ? newCount : product.qtty;
+
+        const newProducts = this.getStorage()
+            .map((x: any) => x._id === product._id ? { ...x, ...product, count: calc(x.count + 1) } : x);
+
+        this.store.dispatch(increaseCount({ product }));
+        localStorage.setItem('cart', JSON.stringify(newProducts));
+    }
+
+    decreaseCount(product: any) {
+        const calc = (newCount = 0) => newCount > 1 ? newCount : 1;
+        const newProducts = this.getStorage().map((x: any) => x._id === product._id ? { ...x, ...product, count: calc(x.count - 1) } : x);
+        this.store.dispatch(decreaseCount({ product }));
+        localStorage.setItem('cart', JSON.stringify(newProducts));
     }
 
     editProduct(product: any) {
-        this.store.dispatch(editProduct({product}));
+        this.store.dispatch(editProduct({ product }));
         localStorage
             .setItem('cart', JSON.stringify(this.getStorage().map((x: any) => x._id === product._id ? { ...x, ...product } : x)));
     }

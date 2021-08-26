@@ -18,15 +18,22 @@ export class CartComponent implements OnInit {
     ) {
         this.cartService.cart$.subscribe((data: any) => {
             this.products = data;
-            this.products.map((x: any) => this.totalPrice += x?.price);
+            this.totalPrice = 0;
+            this.products.map((x: any) => this.totalPrice += x?.price * x?.count);
         })
     }
 
     ngOnInit(): void {
     }
 
-    addProduct() {
-        this.cartService.addProduct({ _id: 'asd' });
+    increaseCount(productId: any) {
+        const product = this.products.find((x: any) => x._id === productId);
+        this.cartService.increaseCount(product);
+    }
+
+    decreaseCount(productId: any) {
+        const product = this.products.find((x: any) => x._id === productId);
+        this.cartService.decreaseCount(product);
     }
 
     removeProduct(_id: any) {

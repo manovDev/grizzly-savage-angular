@@ -19,13 +19,13 @@
 
 
                         <div class="product-counter">
-                            <button class="reduceCounter" id="reduceCounter" (click)="handleCounter($event)">-</button>
+                            <button class="reduceCounter" id="reduceCounter" (click)="decreaseCount(product?._id)">-</button>
 
-                            <input type="number" min="1" [max]="product?.qtty" [value]="productCounter?.units"
+                            <input type="number" min="1" [max]="product?.qtty" [value]="product?.count ? product.count : 1"
                                 readOnly />
 
                             <button class="incCounter" id="incCounter" [attr.data-max]="product?.qtty"
-                                (click)="handleCounter($event)">+</button>
+                                (click)="increaseCount(product?._id)">+</button>
                         </div>
                         <!-- 
                                         <ProductCounter
