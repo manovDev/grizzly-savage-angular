@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { SigninService } from '../signin/signin.service';
+
 @Injectable({
     providedIn: 'root'
 })
@@ -12,6 +13,7 @@ export class OrderService {
     baseUrl: string = `${environment.baseUrl}/${environment.order.base}`;
     placeOrderUrl: string = `${this.baseUrl}/${environment.order.placeOrder}`;
     getAllUrl: string = `${this.baseUrl}/${environment.order.getAll}`;
+    getOneUrl: Function = (id: string) => `${this.baseUrl}/${environment.order.getOne(id)}`;
     order$: Observable<object>;
     data: any = {};
     constructor(
@@ -37,6 +39,14 @@ export class OrderService {
 
     getAll() {
         return this.http.get(this.getAllUrl, {
+            headers: {
+                'Authorization': `Bearer ${this.auth.userInfo.Aa}`
+            }
+        });
+    }
+
+    getOne(orderId: string) {
+        return this.http.get(this.getOneUrl(orderId), {
             headers: {
                 'Authorization': `Bearer ${this.auth.userInfo.Aa}`
             }
