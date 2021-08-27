@@ -32,6 +32,8 @@ import { OrderConfirmComponent } from './components/order-confirm/order-confirm.
 import { OrdersuccsessComponent } from './components/ordersuccsess/ordersuccsess.component';
 import { UserordersComponent } from './components/userorders/userorders.component';
 import { ProfilepageComponent } from './components/profilepage/profilepage.component';
+import { DashboardLayoutComponent } from './components/layouts/dashboard-layout/dashboard-layout.component';
+import { DashboardaddproductComponent } from './components/dashboardaddproduct/dashboardaddproduct.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -56,6 +58,8 @@ import { ProfilepageComponent } from './components/profilepage/profilepage.compo
         OrdersuccsessComponent,
         UserordersComponent,
         ProfilepageComponent,
+        DashboardLayoutComponent,
+        DashboardaddproductComponent,
     ],
     imports: [
         BrowserModule,

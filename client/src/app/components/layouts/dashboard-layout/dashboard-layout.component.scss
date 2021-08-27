@@ -1,4 +1,5 @@
 .dashboard-layout-wrapper {
+
     .dashboard-nav {
         position: fixed;
         width: 200px;
@@ -21,29 +22,26 @@
                     width: 100%;
                     text-decoration: none;
                     transition: all 0.2s ease-in-out;
+                    height: 60px;
     
                     &:hover {
                         background-color: #366ea7;
                     }
-    
-                    img {
-                        margin-right: 10px;
-                        font-size: 20px;
-                        
+                    
+                    div {
+                        svg {
+                            margin-right: 10px;
+                            width: 25px;
+                            font-size: 14px;
+                            fill: orange
+                            
+                        }
                     }
                 }
             }
         }
     }
 
-    .loader {
-        width: 100%;
-        height: 600px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
     .dashboard-layout-content {
         width: 100%;
         max-width: 1440px;

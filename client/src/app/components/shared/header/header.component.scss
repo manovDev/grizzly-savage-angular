@@ -13,6 +13,9 @@
 }
 
 .nav-wrapper {
+    position: fixed;
+    top: 0;
+    z-index: 2;
     width: 100%;
     z-index: 2;
     height: 150px;
