@@ -11,9 +11,9 @@ import { SigninService } from '../signin/signin.service';
 export class OrderService {
     baseUrl: string = `${environment.baseUrl}/${environment.order.base}`;
     placeOrderUrl: string = `${this.baseUrl}/${environment.order.placeOrder}`;
+    getAllUrl: string = `${this.baseUrl}/${environment.order.getAll}`;
     order$: Observable<object>;
     data: any = {};
-
     constructor(
         private auth: SigninService,
         private http: HttpClient,
@@ -29,6 +29,14 @@ export class OrderService {
 
     placeOrder() {
         return this.http.post(this.placeOrderUrl, this.data, {
+            headers: {
+                'Authorization': `Bearer ${this.auth.userInfo.Aa}`
+            }
+        });
+    }
+
+    getAll() {
+        return this.http.get(this.getAllUrl, {
             headers: {
                 'Authorization': `Bearer ${this.auth.userInfo.Aa}`
             }

@@ -22,6 +22,7 @@ export const environment = {
     },
     order: {
         base: 'order',
+        getAll: 'get-all',
         placeOrder: 'place-order'
     }
 };

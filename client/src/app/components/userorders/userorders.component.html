@@ -13,6 +13,16 @@
                 </tr>
             </thead>
             <tbody>
+                <tr *ngFor="let order of myOrders">
+                    <td width="40%">{{order._id}}</td>
+                    <td width="30%">{{order.qtty}}</td>
+                    <td width="10%">${{(calc(order.totalPrice,order.tax)).toFixed(2)}}</td>
+                    <td width="10%" [ngClass]="[order.status === 'Processing' ? 'proc-status' : 'dev-status']">
+                        {{order.status}}</td>
+                    <td width="10%">
+                        <a [routerLink]="order._id">See more</a>
+                    </td>
+                </tr>
                 <!-- {
                 isLoading || !user
                     ?   
@@ -41,7 +51,7 @@
                             )
                         )
                 } -->
-                
+
             </tbody>
             <tfoot>
                 <tr>
