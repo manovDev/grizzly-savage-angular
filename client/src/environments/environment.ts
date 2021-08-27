@@ -23,6 +23,7 @@ export const environment = {
     order: {
         base: 'order',
         getAll: 'get-all',
+        getOne: (id: string) => `${id}`,
         placeOrder: 'place-order'
     }
 };

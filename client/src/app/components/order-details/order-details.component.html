@@ -1,51 +1,44 @@
 <app-main-layout>
     <section class="order-details-wrapper">
-        <!-- <h1 class="order-details-title">Order # {orderId}</h1> -->
+        <h1 class="order-details-title">Order # {{order?._id}}</h1>
         <div class="shipping-data">
             <h2 class="shipping-title">
                 Shipping Info
             </h2>
             <p>
-                <!-- <span>Name: </span> {`${user.firstName} ${user.lastName}`} -->
+                <span>Name: </span> {{user?.firstName}} {{user?.lastName}}
             </p>
             <p>
-                <!-- <span>Phone: </span> {order.phoneNumber} -->
+                <span>Phone: </span> {{order.phoneNumber}}
             </p>
             <p>
-                <!-- <span>Address: </span> {`${order.address}, ${order.city}, ${order.postalCode}, ${order.country}`} -->
+                <span>Address: </span>{{order?.address}}, {{order?.city}}, {{order?.postalCode}}, {{order?.country}}
             </p>
         </div>
         <div class="shipping-data">
-            <!-- <p class={order.status === 'Processing' ? 'proc-status' : 'dev-status'}> -->
-                <!-- <span>Status: </span> {order.status} -->
-            <!-- </p> -->
+            <p [ngClass]="order.status === 'Processing' ? 'proc-status' : 'dev-status'"> 
+                <span>Status: </span> {{order?.status}}
+            </p>
         </div>
         <h2 class="cart-items-title">Order Items:</h2>
-        <!-- <ul> -->
-            <!-- {
-                order.products && order.products
-                    .map((product) =>
-                        (
-                            <li key={product._id}>
-                                <div class="selected-product">
-                                    <img class="product-image" src={product.image} alt={product.title}/>
-                                    
-                                    <Link class="product-title" to={"/product/" + product._id}>
-                                        {product.title}
-                                    </Link>
+        <ul>
+            <li *ngFor="let product of order.products">
+                <div class="selected-product">
+                    <img class="product-image" [src]="product?.image" [alt]="product.title"/>
+                    
+                    <a class="product-title" [routerLink]="['/product/', product._id]">
+                        {{product.title}}
+                    </a>
 
-                                    <div class="product-price">
-                                        {`$${(product.price * product.units).toFixed(2)}`}
-                                    </div>
+                    <div class="product-price">
+                        ${{multiply(product?.price,product?.units).toFixed(2)}}
+                    </div>
 
-                                    <div class="product-price">
-                                        {`${product.units} Piece(s)`}
-                                    </div>
-                                </div>
-                            </li>
-                        )
-                    )
-            } -->
-        <!-- </ul> -->
+                    <div class="product-price">
+                        {{product?.count}} Piece(s)
+                    </div>
+                </div>
+            </li>
+        </ul>
     </section>
 </app-main-layout>
