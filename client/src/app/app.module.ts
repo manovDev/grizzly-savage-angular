@@ -25,6 +25,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { StoreModule } from '@ngrx/store';
 import { cart } from './reducers/cart.reducer';
 import { order } from './reducers/order.reducer';
+import { products } from './reducers/products.reducer';
 import { OrderShippingComponent } from './components/order-shipping/order-shipping.component';
 import { OrderPaymentComponent } from './components/order-payment/order-payment.component';
 import { OrderConfirmComponent } from './components/order-confirm/order-confirm.component';
@@ -63,7 +64,7 @@ import { ProfilepageComponent } from './components/profilepage/profilepage.compo
         AngularFireAuthModule,
         AppRoutingModule,
         NgbModule,
-        StoreModule.forRoot({cart, order}, {})
+        StoreModule.forRoot({cart, order, products}, {})
     ],
     exports: [
         AppComponent,

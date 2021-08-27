@@ -1,11 +1,7 @@
 <div class="search-products">
-    <form>
-        <input
-            type="text"
-            name="search"
-            placeholder="Search for product..."
-        />
-            <!-- (change)=[handleSearch] -->
+    <form (submit)="search($event, searchInput.value)">
+        <input #searchInput type="text" name="search" placeholder="Search for product..." />
+        <!-- (change)=[handleSearch] -->
 
         <button type="button">
             Search
