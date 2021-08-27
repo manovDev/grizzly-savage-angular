@@ -19,6 +19,10 @@ export const environment = {
         edit: 'edit',
         delete: 'delete',
         getOne: (id: string) => `${id}`,
+    },
+    order: {
+        base: 'order',
+        placeOrder: 'place-order'
     }
 };
 

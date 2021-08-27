@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { addProduct, decreaseCount, editProduct, increaseCount, removeProduct } from '../../actions/cart.actions';
+import { addProduct, decreaseCount, editProduct, increaseCount, removeProduct, removeAllProducts } from '../../actions/cart.actions';
 
 @Injectable({
     providedIn: 'root'
@@ -17,9 +17,13 @@ export class CartService {
 
     }
 
-    private getStorage() {
+    getStorage() {
         const cart = localStorage.getItem('cart');
         return cart ? JSON.parse(cart) : [];
+    }
+
+    removeAllProducts () {
+        this.store.dispatch(removeAllProducts());
     }
 
     addProduct(product: any) {
