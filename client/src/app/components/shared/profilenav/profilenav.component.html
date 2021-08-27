@@ -19,7 +19,7 @@
         </li>
     </ul>
     <ul *ngIf="isUserLoggedIn">
-        <li>
+        <li *ngIf="user.role === 'admin'">
             <a routerLink="/dashboard/products">Add Product</a>
         </li>
         <li>
