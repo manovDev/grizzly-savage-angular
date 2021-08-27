@@ -13,7 +13,7 @@ export class SigninService {
     constructor(
         private afAuth: AngularFireAuth,
         private http: HttpClient,
-    ) { 
+    ) {
         this.afAuth.authState.subscribe(user => {
             if (user) {
                 this.userInfo = user;
@@ -29,7 +29,9 @@ export class SigninService {
 
     signout() {
         return this.afAuth.signOut()
-        .then(() => localStorage.removeItem('user'));
+            .then(() => {
+                localStorage.removeItem('user');
+            });
     }
 
     async isLoggedIn(): Promise<boolean> {
