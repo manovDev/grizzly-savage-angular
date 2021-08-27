@@ -27,6 +27,7 @@ import { cart } from './reducers/cart.reducer';
 import { OrderShippingComponent } from './components/order-shipping/order-shipping.component';
 import { OrderPaymentComponent } from './components/order-payment/order-payment.component';
 import { OrderConfirmComponent } from './components/order-confirm/order-confirm.component';
+import { OrdersuccsessComponent } from './components/ordersuccsess/ordersuccsess.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -48,6 +49,7 @@ import { OrderConfirmComponent } from './components/order-confirm/order-confirm.
         OrderShippingComponent,
         OrderPaymentComponent,
         OrderConfirmComponent,
+        OrdersuccsessComponent,
     ],
     imports: [
         BrowserModule,
