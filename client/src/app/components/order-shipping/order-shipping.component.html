@@ -1,42 +1,33 @@
 <app-main-layout>
     <section class="order-shipping-wrapper">
-        <!-- <OrderSteps steps={["shipping"]}/> -->
-        
+        <div class="order-steps-wrapper">
+            <div class="active-step order-step">Shipping</div>
+            <div class="order-step">Confirm Order</div>
+            <div class="order-step">Payment</div>
+        </div>
+
         <div class="shipping-form">
             <h1>Shipping Info</h1>
-            <form >
-                <!-- <form (sumbit)="submitForm"> -->
+            <form (submit)="submitForm($event, address.value,city.value, phoneNumber.value, postalCode.value, country.value)">
                 <label for="address">Address</label>
-                <input id="address" type="text" name="address" change="setStateForm" placeholder="1234 Wolf Street"/>
-                <label for="city">City</label>
-                <input id="city" type="text" name="city" change="setStateForm" placeholder="New York"/>
-                <label for="phoneNumber">Phone</label>
-                <input id="phoneNumber" type="text" name="phoneNumber" change="setStateForm" placeholder="088 333 4444"/>
-                <label for="postalCode">Postal Code</label>
-                <input id="postalCode" type="text" name="postalCode" change="setStateForm" placeholder="12345"/>
-                <label for="country">Country</label>
-                <select id="country" name="country" change="setStateForm">
-                    <option label="Select a country" value="0">Select a country ... </option>
+                <input #address id="address" type="text" name="address" change="setStateForm" placeholder="1234 Wolf Street" />
 
-                <!-- {
-                    countriesState 
-                    ? countriesState.map((country, index) => (
-                            <option
-                                key={index}
-                                value={country.name}
-                                label={country.name}>
-                                    {country.name}
-                            </option>
-                            )
-                        )
-                    :   (
-                            <option
-                                value="Loading..."
-                                label="Loading...">
-                                    Loading...
-                            </option>
-                        )
-                } -->
+                <label for="city">City</label>
+                <input #city id="city" type="text" name="city" change="setStateForm" placeholder="New York" />
+
+                <label for="phoneNumber">Phone</label>
+                <input #phoneNumber id="phoneNumber" type="text" name="phoneNumber" change="setStateForm"
+                    placeholder="088 333 4444" />
+
+                <label for="postalCode">Postal Code</label>
+                <input #postalCode id="postalCode" type="text" name="postalCode" change="setStateForm" placeholder="12345" />
+
+                <label for="country">Country</label>
+                <select #country id="country" name="country" change="setStateForm">
+                    <option label="Select a country" value="0">Select a country ... </option>
+                    <option *ngFor="let country of countries" [attr.name]="country?.name" [value]="country?.name">
+                        {{country?.name}}
+                    </option>
                 </select>
                 <button class="continue-btn">Continue</button>
             </form>

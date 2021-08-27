@@ -24,6 +24,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { CartComponent } from './components/cart/cart.component';
 import { StoreModule } from '@ngrx/store';
 import { cart } from './reducers/cart.reducer';
+import { order } from './reducers/order.reducer';
 import { OrderShippingComponent } from './components/order-shipping/order-shipping.component';
 import { OrderPaymentComponent } from './components/order-payment/order-payment.component';
 import { OrderConfirmComponent } from './components/order-confirm/order-confirm.component';
@@ -56,7 +57,7 @@ import { OrderConfirmComponent } from './components/order-confirm/order-confirm.
         AngularFireAuthModule,
         AppRoutingModule,
         NgbModule,
-        StoreModule.forRoot({cart}, {})
+        StoreModule.forRoot({cart, order}, {})
     ],
     exports: [
         AppComponent,

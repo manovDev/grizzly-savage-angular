@@ -2,6 +2,12 @@
     <section class="order-payment-wrapper">
         <!-- <OrderSteps steps={["shipping", "confirm", "payment"]}/> -->
 
+        <div class="order-steps-wrapper">
+            <div class="active-step order-step">Shipping</div>
+            <div class="active-step order-step">Confirm Order</div>
+            <div class="active-step order-step">Payment</div>
+        </div>
+
         <!-- {isLoading
             ?   
                 <div class="loader">
@@ -13,14 +19,14 @@
 
         <div class="shipping-form">
             <h1>Card Info</h1>
-            <form submit="handleSubmit()">
+            <form (submit)="handleSubmit($event)">
                 <label for="cardNumber">Card Number</label>
                 <input id="cardNumber" type="text" name="cardNumber" placeholder="1234 1234 1234 1234"/>
                 <label for="cardExpiry">Card Expiry</label>
                 <input id="cardExpiry" type="text" name="cardExpiry" placeholder="MM / YY"/>
                 <label for="phone">Card CVC</label>
                 <input id="cardCvc" type="text" name="cardCvc" placeholder="CVC"/>
-                <button class="continue-btn" click="handleSubmit()">Pay</button>
+                <button class="continue-btn" >Pay</button>
             </form>
         </div>
     </section>

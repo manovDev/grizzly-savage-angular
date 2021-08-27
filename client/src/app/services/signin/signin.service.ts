@@ -8,10 +8,20 @@ import { AngularFireAuth } from "@angular/fire/auth";
 export class SigninService {
     signInUrl: string = `${environment.baseUrl}/user/signin`;
 
+    userInfo: any = {};
+
     constructor(
         private afAuth: AngularFireAuth,
         private http: HttpClient,
-    ) { }
+    ) { 
+        this.afAuth.authState.subscribe(user => {
+            if (user) {
+                this.userInfo = user;
+            } else {
+                localStorage.removeItem('user');
+            }
+        })
+    }
 
     signin(body: object, headers: any) {
         return this.http.post(this.signInUrl, body, { headers });
