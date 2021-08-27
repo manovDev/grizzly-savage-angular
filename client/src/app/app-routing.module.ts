@@ -14,6 +14,7 @@ import { OrderPaymentComponent } from './components/order-payment/order-payment.
 import { OrderConfirmComponent } from './components/order-confirm/order-confirm.component';
 import { OrdersuccsessComponent } from './components/ordersuccsess/ordersuccsess.component';
 import { UserordersComponent } from './components/userorders/userorders.component';
+import { ProfilepageComponent } from './components/profilepage/profilepage.component';
 
 const routes: Routes = [
     {
@@ -32,6 +33,10 @@ const routes: Routes = [
     {
         path: 'home',
         component: HomeComponent,
+    },
+    {
+        path: 'my-profile',
+        component: ProfilepageComponent,
     },
     {
         path: 'product/:productId',

@@ -30,6 +30,7 @@ import { OrderPaymentComponent } from './components/order-payment/order-payment.
 import { OrderConfirmComponent } from './components/order-confirm/order-confirm.component';
 import { OrdersuccsessComponent } from './components/ordersuccsess/ordersuccsess.component';
 import { UserordersComponent } from './components/userorders/userorders.component';
+import { ProfilepageComponent } from './components/profilepage/profilepage.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -53,6 +54,7 @@ import { UserordersComponent } from './components/userorders/userorders.componen
         OrderConfirmComponent,
         OrdersuccsessComponent,
         UserordersComponent,
+        ProfilepageComponent,
     ],
     imports: [
         BrowserModule,
