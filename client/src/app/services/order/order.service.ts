@@ -5,8 +5,6 @@ import { Store } from '@ngrx/store';
 import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { SigninService } from '../signin/signin.service';
-import { CartService } from '../cart/cart.service';
-import { Router } from '@angular/router';
 @Injectable({
     providedIn: 'root'
 })
@@ -17,8 +15,6 @@ export class OrderService {
     data: any = {};
 
     constructor(
-        private router: Router,
-        private cartService: CartService,
         private auth: SigninService,
         private http: HttpClient,
         private store: Store<{ order: object }>
@@ -32,14 +28,10 @@ export class OrderService {
     }
 
     placeOrder() {
-        this.http.post(this.placeOrderUrl, this.data, {
+        return this.http.post(this.placeOrderUrl, this.data, {
             headers: {
                 'Authorization': `Bearer ${this.auth.userInfo.Aa}`
             }
-        }).subscribe(data => {
-            localStorage.removeItem('cart');
-            this.cartService.removeAllProducts();
-            this.router.navigate(['order/success']);
         });
     }
 }
