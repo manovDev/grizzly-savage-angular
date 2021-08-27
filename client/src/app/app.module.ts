@@ -34,6 +34,7 @@ import { UserordersComponent } from './components/userorders/userorders.componen
 import { ProfilepageComponent } from './components/profilepage/profilepage.component';
 import { DashboardLayoutComponent } from './components/layouts/dashboard-layout/dashboard-layout.component';
 import { DashboardaddproductComponent } from './components/dashboardaddproduct/dashboardaddproduct.component';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -60,6 +61,7 @@ import { DashboardaddproductComponent } from './components/dashboardaddproduct/d
         ProfilepageComponent,
         DashboardLayoutComponent,
         DashboardaddproductComponent,
+        OrderDetailsComponent,
     ],
     imports: [
         BrowserModule,

@@ -18,6 +18,7 @@ import { OrdersuccsessComponent } from './components/ordersuccsess/ordersuccsess
 import { UserordersComponent } from './components/userorders/userorders.component';
 import { ProfilepageComponent } from './components/profilepage/profilepage.component';
 import { DashboardaddproductComponent } from './components/dashboardaddproduct/dashboardaddproduct.component';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
 const routes: Routes = [
     {
         path: 'aboutus',
@@ -73,6 +74,10 @@ const routes: Routes = [
         path: 'order/success',
         component: OrdersuccsessComponent,
         canActivate: [GuestGuard],
+    },
+    {
+        path: 'order/details/:orderId',
+        component: OrderDetailsComponent
     },
     {
         path: 'my-orders',

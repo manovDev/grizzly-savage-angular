@@ -32,15 +32,8 @@
             </li>
         </ul>
 
-        <div class="user-greetings">
-            <!-- {user
-                    ? (
-                        <>
-                            <span>Hello, {user.firstName}</span>
-                        </>
-                    )
-                    : ''
-                } -->
+        <div *ngIf="user" class="user-greetings">
+            <span>Hello, {{user.firstName}}</span>
         </div>
         <div class="nav-additions">
             <app-profilenav></app-profilenav>

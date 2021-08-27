@@ -28,14 +28,7 @@
                             <button class="incCounter" id="incCounter" [attr.data-max]="product?.qtty"
                                 (click)="increaseCount(product?._id)">+</button>
                         </div>
-                        <!-- 
-                                        <ProductCounter
-                                            productId={product._id}
-                                            productUnits={product.units}
-                                            maxQtty={product.qtty}/> -->
-
                         <div class="product-remove-btn">
-                            <!-- (click)={handleRemoveProduct} -->
                             <button [id]="product?._id" (click)="removeProduct(product?._id)">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
                                     fill="#000000">
@@ -74,10 +67,4 @@
             </div>
         </div>
     </section>
-
-    <!-- <ul>
-        <li *ngFor="let product of products">
-            {{product?.title}}
-        </li>
-    </ul> -->
 </app-main-layout>

@@ -2,34 +2,14 @@
     <div class="sign-in">
         <div class="sign-in-content">
             <h1>Login</h1>
-            <!-- <form onSubmit={submitForm}> -->
             <form (submit)="signin($event, email.value,password.value)">
                 <label for="email">Email</label>
-                <!-- data-err={!errState.emailErr ? '' : errState.emailErr}>Email</label> -->
                 <input id="email" name="email" type="email" #email placeholder="john@domain.com" />
-                <!-- onChange={setStateForm}
-                    onBlur={emailValidation} -->
 
                 <label for="password">Password</label>
-                <!-- data-err={!errState.signInErr ? '' : errState.signInErr}>Password</label> -->
                 <input id="password" name="password" type="password" #password />
-                <!-- onChange={setStateForm}
-                    onBlur={clearErrState} -->
 
                 <button>Login</button>
-                <!-- {stateForm.email && stateForm.password && !errState.emailErr
-                ? <button>
-                        {isLoading
-                            ?   
-                                <div class="loader">
-                                    <Spinner animation="border" variant="warning" />
-                                </div>
-                            : 
-                                'Login'
-                        }
-                    </button>
-                : <button class="dis-btn" disabled>Login</button>
-                } -->
             </form>
             <div class="new-customer">
                 New customer?
