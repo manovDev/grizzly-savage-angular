@@ -30,6 +30,10 @@ export class ProductsService {
     }
 
     getProducts() {
+        this.http.get(this.getAllUrl).subscribe((products: any) => {
+            this.products = products;
+            this.store.dispatch(setProducts({ products }));
+        })
         return this.products$;
     }
 

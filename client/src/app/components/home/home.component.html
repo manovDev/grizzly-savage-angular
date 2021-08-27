@@ -33,7 +33,7 @@
                             <a class="product-title" [routerLink]="['/product/', item._id]">
                                 {{item.title}}
                             </a>
-                            <div class="product-price">{{item.price}}</div>
+                            <div class="product-price">${{item.price.toFixed(2)}}</div>
                             <button class="add-to-cart-btn" (click)="handleAddToCart(item)">Add To Cart</button>
                         </div>
                     </div>

@@ -3,101 +3,45 @@
         <h1>Add Product</h1>
 
         <div class="add-product-content">
-            <form submit="">
+            <form
+                (submit)="onSubmitAddProduct($event, title.value,image.value,price.value,category.value,brand.value,model.value,description.value,qtty.value)">
+
                 <label for="title">Title</label>
 
-                <input
-                    id="title"
-                    name="title"
-                    type="text"
-                />
+                <input #title id="title" name="title" type="text" />
 
                 <label for="imageUrl">Image URL</label>
 
-                <input
-                    id="imageUrl"
-                    name="image"
-                    type="text"
-                />
+                <input #image id="imageUrl" name="image" type="text" />
 
                 <label for="price">Price</label>
-                <input
-                    id="price"
-                    name="price"
-                    type="text"
-                />
+                <input #price id="price" name="price" type="text" />
 
                 <label for="category">Category</label>
-                <select id="category" name="category">
+                <select id="category" name="category" #category>
                     <option label="Select Category" value="0">Select Category </option>
-
-                    <!-- {
-                        categoryState 
-                        ? categoryState.map((category, index) => (
-                                <option
-                                    key={index}
-                                    value={category._id}
-                                    label={category.name}>
-                                        {category.name}
-                                </option>
-                                )
-                            )
-                        :   (
-                                <option
-                                    value="Loading..."
-                                    label="Loading...">
-                                        Loading...
-                                </option>
-                            )
-                    } -->
+                    <option *ngFor="let category of categories" [attr.label]="category?.name" [value]="category?._id">
+                        {{category?.name}} </option>
                 </select>
 
                 <label for="brand">Brand</label>
-                <select id="brand" name="brand" onChange={handleChange}>
+                <select id="brand" name="brand" change="handleChange" #brand>
                     <option label="Select Brand" value="0">Select Brand </option>
+                    <option *ngFor="let brand of brands" [attr.label]="brand?.name" [value]="brand?._id">
+                        {{brand?.name}} </option>
 
-                    <!-- {
-                        brandState 
-                        ? brandState.map((brand, index) => (
-                                <option
-                                    key={index}
-                                    value={brand._id}
-                                    label={brand.name}>
-                                        {brand.name}
-                                </option>
-                                )
-                            )
-                        :   (
-                                <option
-                                    value="Loading..."
-                                    label="Loading...">
-                                        Loading...
-                                </option>
-                            )
-                    } -->
                 </select>
 
                 <label for="model">Model</label>
-                <input
-                    id="model"
-                    type="text"
-                    name="model"
-                />
+                <input #model id="model" type="text" name="model" />
 
                 <label for="description">Description</label>
-                <textarea
-                    id="description"
-                    name="description"
-                > </textarea>
+                <textarea #description id="description" name="description"> </textarea>
 
                 <label for="qtty">Stock</label>
-                <input
-                    id="qtty"
-                    type="text"
-                    name="qtty"
-                />
+                <input #qtty id="qtty" type="text" name="qtty" />
 
-            <!-- { -->
+                <!-- { -->
                 <button>Add
                     <!-- {isLoading
                         ?   
@@ -108,7 +52,7 @@
                             'Add'
                     } -->
                 </button>
-            <!-- } -->
+                <!-- } -->
             </form>
         </div>
     </section>
