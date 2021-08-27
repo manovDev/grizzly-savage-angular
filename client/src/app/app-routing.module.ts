@@ -9,6 +9,8 @@ import { FaqComponent } from './components/faq';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { CartComponent } from './components/cart/cart.component';
 import { AuthGuard } from './guard/guard.guard';
+import { GuestGuard } from './guest-guard/guest.guard';
+import { AdminGuard } from './admin-guard/admin.guard';
 import { OrderShippingComponent } from './components/order-shipping/order-shipping.component';
 import { OrderPaymentComponent } from './components/order-payment/order-payment.component';
 import { OrderConfirmComponent } from './components/order-confirm/order-confirm.component';
@@ -38,10 +40,12 @@ const routes: Routes = [
     {
         path: 'dashboard/products',
         component: DashboardaddproductComponent,
+        canActivate: [AdminGuard],
     },
     {
         path: 'my-profile',
         component: ProfilepageComponent,
+        canActivate: [GuestGuard],
     },
     {
         path: 'product/:productId',
@@ -53,19 +57,23 @@ const routes: Routes = [
     },
     {
         path: 'order/confirm',
-        component: OrderConfirmComponent
+        component: OrderConfirmComponent,
+        canActivate: [GuestGuard],
     },
     {
         path: 'order/shipping',
-        component: OrderShippingComponent
+        component: OrderShippingComponent,
+        canActivate: [GuestGuard],
     },
     {
         path: 'order/payment',
-        component: OrderPaymentComponent
+        component: OrderPaymentComponent,
+        canActivate: [GuestGuard],
     },
     {
         path: 'order/success',
-        component: OrdersuccsessComponent
+        component: OrdersuccsessComponent,
+        canActivate: [GuestGuard],
     },
     {
         path: 'order/details/:orderId',
@@ -73,7 +81,8 @@ const routes: Routes = [
     },
     {
         path: 'my-orders',
-        component: UserordersComponent
+        component: UserordersComponent,
+        canActivate: [GuestGuard],
     },
     {
         path: 'sign-in',

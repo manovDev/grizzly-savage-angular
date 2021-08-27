@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class ProfilenavComponent implements OnInit {
     isUserLoggedIn: boolean = false;
-
+    user : any = {};
     constructor(
         private service: SigninService,
         private router: Router
@@ -16,6 +16,8 @@ export class ProfilenavComponent implements OnInit {
 
     ngOnInit(): void {
         this.isLoggedIn();
+        let user = localStorage.getItem('user');
+        this.user = user ? JSON.parse(user) : {};
     }
 
     signOut() {
