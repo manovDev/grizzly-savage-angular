@@ -5,23 +5,22 @@
         <div class="profile-content">
             
             <div class="profile-image-wrapper">
-                <!-- <img src={user.user.profileImage} alt=""/> -->
-                <img src="" alt=""/>
+                <img src="https://toppng.com/uploads/preview/instagram-default-profile-picture-11562973083brycehrmyv.png" alt=""/>
             </div>
             <div class="profile-info-wrapper">
                 <div class="info-container">
                     <h2>Full Name</h2>
-                    <p><!--{user.user.firstName} {user.user.lastName}--></p>
+                    <p>{{user.firstName}} {{user.lastName}}</p>
                 </div>
 
                 <div class="info-container">
                     <h2>Email Address</h2>
-                    <p><!--{user.user.email}--></p>
+                    <p>{{user.email}}</p>
                 </div>
 
                 <div class="info-container">
                     <h2>Joined On</h2>
-                    <p><!--{user.user.date.split('T')[0]}--></p>
+                    <p>{{user.date.split('T')[0]}}</p>
                 </div>
 
                 <a routerLink="/my-orders">My Orders</a>
