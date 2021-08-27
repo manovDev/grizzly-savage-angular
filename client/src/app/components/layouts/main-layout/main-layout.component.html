@@ -1,8 +1,15 @@
 <div class="main-layout-wrapper">
-    <!-- <header class={`${path === '' || path.includes('dashboard') ? 'header sticky' : 'header'}`}> -->
     <app-header></app-header>
 
-    <!-- {shallShowSlideshow()} -->
+    <ngb-carousel *ngIf="url === '/home'" #carousel [interval]="2000" (slide)="onSlide($event)">
+        <ng-template ngbSlide *ngFor="let img of images; index as i">
+            <div class="carousel-caption">
+            </div>
+            <div class="picsum-img-wrapper">
+                <img [src]="img" alt="My image {{i + 1}} description">
+            </div>
+        </ng-template>
+    </ngb-carousel>
 
     <div class="main-layout-content">
         <ng-content></ng-content>
